@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Site All</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        width: 250px;
+        max-width: 250px;
+        padding: 10px;
+      }
+
+      h2 {
+        color: #333;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+
+        color: #000000;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 6px;
+        gap: 4px;
+      }
+      
+      ul:not(:empty) {
+        border-width: 1px;
+        border-color: #fbe7e7;
+        background-color: #ffffff;
+        border-style: solid;
+        border-radius: 8px;
+        box-shadow: 0px 0px 3px rgba(66, 66, 66, 0.58);
+      }
+
+      li {
+        /* margin-bottom: 8px; */
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        align-items: center;
+        gap: 8px;
+      }
+
+      #openAll {
+        background-color: #d0dbeb;
+        color: #030304;
+        border: none;
+        padding: 6px 12px;
+        cursor: pointer;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        box-shadow: 0px 0px 0px 0px rgb(169, 168, 168);
+        transition: all 0.2s;
+      }
+
+      #openAll:hover {
+        box-shadow: 0px 0px 2px 2px rgb(169, 168, 168);
+      }
+
+      img {
+        height: 20px;
+        width: 20px;
+        cursor: pointer;
+      }
+
+      input {
+        padding: 6px;
+        width: 100%;
+        font-size: 12px;
+        border-width: 1px;
+        border-color: #fbe7e7;
+        background-color: #ffffff;
+        color: #000000;
+        border-style: solid;
+        border-radius: 8px;
+        box-shadow: 0px 0px 3px rgba(66, 66, 66, 0.58);
+        text-shadow: -50px 0px 0px rgba(66, 66, 66, 0);
+      }
+      input:focus {
+        outline: none;
+      }
+
+      #addWrapper {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 8px;
+      }
+
+      #addLink {
+        cursor: pointer;
+      }
+    </style>
+    <script src="popup.js"></script>
+  </head>
+  <body>
+    <!-- <h2>Quick Links</h2> -->
+    <div id="openAll">
+      Open All <img src="images/init.png" alt="" srcset="" />
+    </div>
+    <ul id="linksList">
+      <div></div>
+    </ul>
+    <div id="addWrapper">
+      <input type="text" id="newLink" placeholder="Enter a new website URL" />
+
+      <img id="addLink" src="images/add.png" alt="" srcset="" />
+    </div>
+  </body>
+</html>
