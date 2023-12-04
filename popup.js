@@ -47,12 +47,18 @@ function updateLinksList(links) {
   linksList.innerHTML = "";
   for (let i = 0; i < links.length; i++) {
     const listItem = document.createElement("li");
-    listItem.textContent = links[i];
+    const listItemText = document.createElement("div");
+    listItemText.textContent = links[i];
+    listItemText.addEventListener("click", function (event) {
+      event.stopPropagation
+      chrome.tabs.create({ url: links[i] });
+    });
 
     const deleteButton = document.createElement("img");
     deleteButton.id = "delLink";
     deleteButton.src = "images/del.png";
     deleteButton.dataset.index = i; // Set the index as a data attribute
+    listItem.appendChild(listItemText);
     listItem.appendChild(deleteButton);
     linksList.appendChild(listItem);
   }

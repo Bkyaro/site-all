@@ -27,7 +27,7 @@
         padding: 6px;
         gap: 4px;
       }
-      
+
       ul:not(:empty) {
         border-width: 1px;
         border-color: #fbe7e7;
@@ -44,6 +44,14 @@
         width: 100%;
         align-items: center;
         gap: 8px;
+      }
+
+      li > div {
+        cursor: pointer;
+        flex: 1;
+        overflow: hidden;
+        text-wrap: nowrap;
+        text-overflow: ellipsis;
       }
 
       #openAll {
@@ -107,7 +115,8 @@
       Open All <img src="images/init.png" alt="" srcset="" />
     </div>
     <ul id="linksList">
-      <div></div>
+      <li>Lorem ipsum dolor sit amet.</li>
+      <li>Magnam officia unde optio sequi.</li>
     </ul>
     <div id="addWrapper">
       <input type="text" id="newLink" placeholder="Enter a new website URL" />
