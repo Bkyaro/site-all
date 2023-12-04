@@ -11,8 +11,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Add a link
     addLinkButton.addEventListener("click", function () {
-      const newLink = newLinkInput.value.trim();
+      let newLink = newLinkInput.value.trim();
       if (newLink) {
+        if (!newLink.startsWith("https://")) {
+          newLink = `https://${newLink}`;
+        }
         links.push(newLink);
         updateLinksList(links);
         saveLinks(links);
@@ -50,7 +53,7 @@ function updateLinksList(links) {
     const listItemText = document.createElement("div");
     listItemText.textContent = links[i];
     listItemText.addEventListener("click", function (event) {
-      event.stopPropagation
+      event.stopPropagation;
       chrome.tabs.create({ url: links[i] });
     });
 
