@@ -25,8 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Remove a link
     linksList.addEventListener("click", function (event) {
-      console.log("event.target.tagName", event.target.tagName);
-      if (event.target.tagName === "IMG") {
+      if (event.target.id === "delLink") {
         const indexToRemove = event.target.dataset.index;
         if (indexToRemove !== undefined) {
           links.splice(indexToRemove, 1);
