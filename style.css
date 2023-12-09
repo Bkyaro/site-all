@@ -3,6 +3,12 @@ body {
   width: 250px;
   max-width: 250px;
   padding: 10px;
+  background: rgb(93, 84, 168);
+  background: linear-gradient(
+    145deg,
+    rgba(93, 84, 168, 1) 0%,
+    rgba(247, 193, 168, 1) 100%
+  );
 }
 
 h2 {
