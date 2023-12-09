@@ -9,8 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const links = data.links;
     updateLinksList(links);
 
-    // Add a link
-    addLinkButton.addEventListener("click", function () {
+    function addLink() {
       let newLink = newLinkInput.value.trim();
       if (newLink) {
         if (!newLink.startsWith("https://")) {
@@ -20,6 +19,16 @@ document.addEventListener("DOMContentLoaded", function () {
         updateLinksList(links);
         saveLinks(links);
         newLinkInput.value = ""; // Clear the input field after adding
+      }
+    }
+
+    // Add a link
+    addLinkButton.addEventListener("click", addLink);
+
+    // Add link when Enter key is pressed
+    newLinkInput.addEventListener("keydown", function (event) {
+      if (event.key === "Enter") {
+        addLink();
       }
     });
 
